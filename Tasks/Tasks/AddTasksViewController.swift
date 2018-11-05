@@ -47,6 +47,11 @@ class AddTasksViewController: UIViewController, UITextViewDelegate {
         
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+        textView.textColor = UIColor.black
+    }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             textView.resignFirstResponder()
